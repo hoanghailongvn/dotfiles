@@ -50,7 +50,7 @@ beautiful.font = "DejaVu Sans 10"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("nvim") or "nano"
+editor = os.getenv("nvim") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -281,6 +281,12 @@ globalkeys = gears.table.join(
         end,
         {description = "toggle", group = "client"}
     ),
+    -- awful.key({ modkey, }, "c",
+    --     function()
+    --         editor_cmd .. " " .. awesome.conffile
+    --     end,
+    --     {description = "config", group = "client"}
+    -- ),
     -- awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
     --           {description = "show main menu", group = "awesome"}),
 
