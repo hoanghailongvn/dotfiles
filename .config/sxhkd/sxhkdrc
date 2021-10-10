@@ -126,6 +126,7 @@ Print
 
 super + Print
     maim -s /home/seadragnol/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg
+    # maim -s --format png /dev/stdout | copyq write image/png -
 
 #Volume Control
 XF86AudioLowerVolume
