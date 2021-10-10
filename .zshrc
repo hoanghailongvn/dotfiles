@@ -136,3 +136,4 @@ bindkey -v
 # <<< bindkey <<<
 
 export TERM=screen-256color
+screenfetch

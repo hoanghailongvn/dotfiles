@@ -49,7 +49,7 @@ beautiful.init("~/.config/awesome/themes/theme.lua")
 beautiful.font = "DejaVu Sans 10"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "kitty"
 editor = os.getenv("nvim") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -599,6 +599,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 4
 
 -- Autostart
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --config ~/.config/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
 -- awful.spawn.with_shell("nitrogen --set-zoom-fill --random /mnt/windows_file/uvsw/Background")
