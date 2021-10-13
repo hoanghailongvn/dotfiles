@@ -14,8 +14,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
 Plug '907th/vim-auto-save'
 Plug 'chrisbra/csv.vim'
+" Theme
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 "Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
@@ -25,8 +27,8 @@ set cursorline
 set encoding=utf8
 set relativenumber
 set noshowmode
-set formatoptions-=ro
 set clipboard=unnamedplus
+autocmd FileType vim set formatoptions-=ro
 
 " Indentation
 set smarttab
@@ -50,9 +52,9 @@ set sidescrolloff=5
 
 " ~~~ Theme ~~~
 source $HOME/.config/nvim/themes/onedark.vim
+" autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
-set t_Co=256
 " ~~~ emehT ~~~
 
 " vimtex
