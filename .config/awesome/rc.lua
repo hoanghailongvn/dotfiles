@@ -251,7 +251,7 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey, }, "Print",
+    awful.key({ modkey, "Shift"}, "s",
         function()
             awful.spawn.with_shell("maim -s --format png | xclip -selection clipboard -target image/png")
         end,
@@ -608,9 +608,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Gaps
-beautiful.useless_gap = 7
+beautiful.useless_gap = 3
 
 -- Autostart
 awful.spawn.with_shell("picom --config ~/.config/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
--- awful.spawn.with_shell("nitrogen --set-zoom-fill --random /mnt/windows_file/uvsw/Background")
