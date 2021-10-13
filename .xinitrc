@@ -2,6 +2,7 @@ xmodmap ~/.Xmodmap
 
 /* run ibus */
 ibus-daemon -drxR
+xrandr -s 1280x720
 
 /* fix bug keyring in mailspring */
 dbus-update-activation-environment --systemd DISPLAY
