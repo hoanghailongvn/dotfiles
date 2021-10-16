@@ -14,17 +14,20 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
 Plug '907th/vim-auto-save'
 Plug 'chrisbra/csv.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 " Theme
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 "Plug 'liuchengxu/vim-which-key'
 call plug#end()
+lua require'colorizer'
 
 """ Main Configurations
 set mouse=a
 set cursorline
 set encoding=utf8
+set number
 set relativenumber
 set noshowmode
 set clipboard=unnamedplus
@@ -61,7 +64,7 @@ let g:airline_powerline_fonts = 1
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
+" set conceallevel=1
 let g:tex_conceal='abdmg'
 " end vimtex
 
@@ -79,6 +82,7 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-git',
             \ 'coc-marketplace',
+            \ 'coc-vimtex',
             \ ]
 " end coc.nvim
 
