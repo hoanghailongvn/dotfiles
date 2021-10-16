@@ -281,11 +281,11 @@ globalkeys = gears.table.join(
         end,
         {description = "toggle", group = "client"}
     ),
-    awful.key({ modkey }, "d",
+    awful.key({ modkey }, "b",
         function()
-            awful.util.spawn("google-chrome-stable")
+            awful.util.spawn("firefox")
         end,
-        {description = "translate", group = "client"}
+        {description = "firefox", group = "client"}
     ),
     -- awful.key({ modkey, }, "c",
     --     function()
