@@ -1,0 +1,3 @@
+#auto mount
+lsblk -o NAME,FSTYPE,UUID
+UUID=44AE1E22AE1E0D54 /mnt/Files ntfs uid=1000,gid=1000,umask=0022,sync,auto,rw 0 0
