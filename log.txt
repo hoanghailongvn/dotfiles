@@ -1,3 +1,12 @@
 #auto mount
 lsblk -o NAME,FSTYPE,UUID
 UUID=44AE1E22AE1E0D54 /mnt/Files ntfs uid=1000,gid=1000,umask=0022,sync,auto,rw 0 0
+
+#missing wifi firmware qualcomm
+add a mirror to /etc/apt/sources.list
+https://packages.debian.org/sid/all/firmware-atheros/download
+
+sudo apt-get install firmware-atheros
+reboot
+
+#
