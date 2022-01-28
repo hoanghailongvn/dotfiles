@@ -1,1 +1,1 @@
-# temp_config
+# Linux Config
