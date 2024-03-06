@@ -1,0 +1,4 @@
+#! /bin/sh
+
+tmux swap-pane -s0 -t3
+tmux kill-pane -t0
