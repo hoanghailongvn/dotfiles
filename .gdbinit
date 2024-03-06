@@ -6,8 +6,8 @@ import splitmind
 
 sections = "regs"
 
-mode = input("source/disasm/mixed mode:?(s/d/m)") or "d"
-using_pwntools = input("using pwntools?(y/n)") or "n"
+mode = input("source/disasm/mixed/normal mode:?(s/d/m/n | default=d)") or "d"
+using_pwntools = input("using pwntools?(y/n | default=n)") or "n"
 
 spliter = splitmind.Mind()
 
@@ -54,5 +54,6 @@ spliter.build()
 
 if using_pwntools == "y":
     import os
-    os.popen('sh /home/kali/.splitmind_pwntools')
+    os.system('tmux swap-pane -s0 -t3')
+    os.system('tmux kill-pane -t0')
 end
