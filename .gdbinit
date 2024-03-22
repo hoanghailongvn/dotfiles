@@ -7,42 +7,45 @@ import splitmind
 sections = "regs"
 
 mode = input("source/disasm/mixed/normal mode:?(s/d/m/n | default=d)") or "d"
+# mode = "d"
 
 if mode != "n":
     using_pwntools = input("using pwntools?(y/n | default=n)") or "n"
+    # using_pwntools = "y"
 
     spliter = splitmind.Mind()
     spliter.tell_splitter(show_titles=True)
     spliter.tell_splitter(set_title="pwndbg")
 
-    spliter.select("main").right(display="regs", size="55%")
-    spliter.select("main").above(display="stack", size="50%", banner="none")
+    spliter.select("main").right(display="rightpanel", size="55%")
+    spliter.select("main").above(display="regs", size="40%", banner="none")
 
     if using_pwntools == "y":
-        spliter.select("regs").below(display="pwntools", size="15%")
+        spliter.select("rightpanel").below(display="pwntools", size="15%")
 
     if mode == "d":
         sections += " disasm"
-        spliter.show("disasm", on="regs")
-        gdb.execute("set context-code-lines 8")
+        spliter.show("disasm", on="rightpanel")
+        gdb.execute("set context-code-lines 20")
 
     elif mode == "s":
         sections += " code"
-        spliter.show("code", on="regs")
+        spliter.show("code", on="rightpanel")
         gdb.execute("set context-source-code-lines 8")
 
     else:
         sections += " disasm code"
-        spliter.show("disasm", on="regs")
-        spliter.show("code", on="regs")
+        spliter.show("disasm", on="rightpanel")
+        spliter.show("code", on="rightpanel")
         gdb.execute("set context-code-lines 8")
         gdb.execute("set context-source-code-lines 10")
 
-    gdb.execute("set context-stack-lines 24")
-    spliter.show("legend", on="stack")
+    gdb.execute("set context-stack-lines 10")
+    spliter.show("legend", on="regs")
+    spliter.show("expressions", on="regs")
+    spliter.show("stack", on="rightpanel")
     # spliter.show("backtrace", on="regs")
     # spliter.show("args", on="regs")
-    spliter.show("expressions", on="regs")
 
     sections += " stack expressions"
     gdb.execute(f"set context-sections {sections}")
